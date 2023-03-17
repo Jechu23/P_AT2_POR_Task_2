@@ -1,9 +1,4 @@
-"""
-Name: Jesus Huanambal
-ID: 20096888
-Date: 17/03/2023
-Assessment : Part AT2 Task 2
-"""
+
 import time
 
 

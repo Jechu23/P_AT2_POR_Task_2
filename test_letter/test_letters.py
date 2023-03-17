@@ -1,6 +1,8 @@
 import unittest
-
-from source_letter.send_letters import Person, Letter, Letterbox
+"""Import modules"""
+from source_letter.main import Person
+from source_letter.letter import Letter
+from source_letter.letterbox import Letterbox
 
 
 class TestLetter(unittest.TestCase):
