@@ -27,7 +27,6 @@ if __name__ == '__main__':
     encrypted_message = Letter('Alice', 'Bob', message).contents
     alice.write_letter(bob, encrypted_message)
 
-
     # Postie picks up the letter from the Postoffice and delivers it to Bob's letterbox
     postie.deliver_mail()
 
