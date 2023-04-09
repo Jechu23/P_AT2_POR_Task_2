@@ -10,6 +10,8 @@ class Person:
         self.name = name
         self.letterbox = Letterbox()
 
+
+
     def write_letter(self, recipient, contents):
         letter = Letter(self.name, recipient.name, contents)
         encrypted_message = letter.contents
