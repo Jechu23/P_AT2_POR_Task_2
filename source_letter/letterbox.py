@@ -21,8 +21,8 @@ class Letterbox:
         return [letter for letter in self.letters if not letter.is_read]
 
     # Check for new letters in the letterbox, print them, and mark then as read.
-    def check_for_new_letters(self):
+    def check_for_new_letters(self, key):
         unread_letters = self.get_unread_letters()
         for letter in unread_letters:
-            print(f'From: {letter.sender}\nTo: {letter.recipient}\nContent:{letter.contents}')
+            print(f'From: {letter.sender}\nTo: {letter.recipient}\nContent:{letter.get_contents(key)}')
             letter.mark_read()

@@ -1,7 +1,8 @@
 """Define the class Person in this case Alice and Bob"""
 # Import Letterbox
 from letterbox import Letterbox
-
+from letter import Letter
+from postoffice import Postoffice
 
 class Person:
     # method initializes a new Person instance with a given name, Letterbox instance to store as an attribute.
@@ -10,9 +11,11 @@ class Person:
         self.letterbox = Letterbox()
 
     def write_letter(self, recipient, contents):
-        from letter import Letter
         letter = Letter(self.name, recipient.name, contents)
-        self.letterbox.send_letter(recipient.letterbox, letter)
+        encrypted_message = letter.contents
+        encrypted_letter = Letter(self.name, recipient.name, encrypted_message)
+        Postoffice.send_letter(encrypted_letter)
 
-    def read_letters(self):
-        self.letterbox.check_for_new_letters()
+    def read_letters(self, key):
+        self.letterbox.check_for_new_letters(key)
+

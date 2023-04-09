@@ -103,3 +103,61 @@ classDiagram
     Person "1"--> "1" LetterBox
     Person --> Letter
 ```
+# UPDATE CLASS DIAGRAM task 3
+```mermaid
+classDiagram
+class Person {
+    +String Name
+    +String Address
+    +Write_Letter()
+    +Read_Letter()
+}
+class Letter{
+    -int ID
+    +Datetime Date
+    +String Sender
+    +String Recipient
+    +String Message
+    +mark_read()
+    +mark_unread()
+    +get_contents()
+}
+
+class LetterBox{
+    +String Address
+    +bool IndicatorFlag
+    +List<Letter> Letters
+    +receive_letter()
+    +send_letter()
+    +get_unread_letters()
+    +check_for_new_letters()
+}
+
+class PostOffice {
+    +String Address
+    +List<Postie> Posties
+    +Send_Letter()
+    +Get_letters()
+}
+
+class Postie {
+    +String Name
+    +String EmployeeID
+    +List<Letter> Letters
+    +DeliverLetter()
+}
+
+class Encryption{
+    +Encrypt(Message) : Message
+    +Decrypt(Message) : Message
+}
+
+Letter "*" --o "1" LetterBox
+Person "1"--> "1" PostOffice
+Person --> Letter
+PostOffice "1" --> "1"Postie
+Postie "1" --> "*" LetterBox
+Letter --> Encryption
+
+
+```
